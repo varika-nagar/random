@@ -31,7 +31,7 @@
 
     /* ── Page wrapper ── */
     .page {
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 60px 40px 80px;
     }
@@ -40,7 +40,7 @@
        HEADER
     ══════════════════════════ */
     header {
-      margin-bottom: 52px;
+      margin-bottom: 36px;
       padding-bottom: 36px;
       border-bottom: 1.5px solid var(--gray-200);
     }
@@ -84,6 +84,40 @@
     .contact-chip svg { flex-shrink: 0; }
 
     /* ══════════════════════════
+       OBJECTIVE / SUMMARY
+    ══════════════════════════ */
+    .summary-block {
+      background: var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .summary-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 12px;
+    }
+
+    .summary-goal {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .summary-text {
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+
+    /* ══════════════════════════
        SECTION TITLE
     ══════════════════════════ */
     .section-label {
@@ -117,10 +151,40 @@
     .block:last-child { margin-bottom: 0; }
 
     /* ══════════════════════════
-       SKILL ROWS (main skills)
+       LANGUAGES
+    ══════════════════════════ */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+    }
+
+    .lang-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .lang-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.2px;
+    }
+
+    .lang-note {
+      font-size: 11px;
+      color: var(--gray-500);
+      margin-top: 3px;
+    }
+
+    /* ══════════════════════════
+       PROJECT SKILL ROWS
     ══════════════════════════ */
     .skill-item {
-      padding: 18px 0;
+      padding: 20px 0;
       border-bottom: 1px solid var(--gray-200);
     }
     .skill-item:last-child { border-bottom: none; padding-bottom: 0; }
@@ -131,14 +195,39 @@
       font-weight: 700;
       color: var(--black);
       letter-spacing: -0.2px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .skill-desc {
       font-size: 13px;
       color: var(--gray-500);
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+
+    .skill-detail {
+      font-size: 12.5px;
+      color: var(--gray-700);
       line-height: 1.5;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .skill-detail ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-detail ul li {
+      padding: 2px 0 2px 14px;
+      position: relative;
+    }
+
+    .skill-detail ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--gray-300);
+      font-weight: 700;
     }
 
     .pill-row {
@@ -177,7 +266,7 @@
       border-bottom: 1px solid var(--gray-200);
     }
     .ds-group:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
-    .ds-group:nth-child(odd) { padding-right: 20px; border-right: 1px solid var(--gray-200); }
+    .ds-group:nth-child(odd)  { padding-right: 20px; border-right: 1px solid var(--gray-200); }
     .ds-group:nth-child(even) { padding-left: 20px; }
     .ds-group:first-child, .ds-group:nth-child(2) { padding-top: 0; }
 
@@ -211,9 +300,6 @@
        CONCEPTS
     ══════════════════════════ */
     .concept-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
       padding: 13px 0;
       border-bottom: 1px solid var(--gray-200);
     }
@@ -224,8 +310,8 @@
       font-size: 14px;
       font-weight: 700;
       color: var(--black);
-      flex: 0 0 auto;
       letter-spacing: -0.2px;
+      margin-bottom: 3px;
     }
     .concept-detail {
       font-size: 12.5px;
@@ -295,17 +381,67 @@
     }
 
     /* ══════════════════════════
-       RESPONSIVE
+       RESPONSIVE — MOBILE
     ══════════════════════════ */
     @media (max-width: 680px) {
-      .page { padding: 36px 20px 60px; }
-      h1 { font-size: 36px; letter-spacing: -1px; }
-      .grid-2 { grid-template-columns: 1fr; }
-      .ds-grid { grid-template-columns: 1fr; }
-      .ds-group:nth-child(odd) { border-right: none; padding-right: 0; }
-      .ds-group:nth-child(even) { padding-left: 0; }
-      .ds-group:nth-last-child(-n+2) { border-bottom: 1px solid var(--gray-200); }
-      .ds-group:last-child { border-bottom: none; }
+      .page {
+        padding: 28px 16px 56px;
+      }
+
+      h1 {
+        font-size: 34px;
+        letter-spacing: -1.2px;
+      }
+
+      .headline {
+        font-size: 15px;
+      }
+
+      .contact-chip {
+        font-size: 12px;
+        padding: 5px 12px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      /* On mobile, put right column first (education/OS) before the long project list */
+      .grid-right  { order: -1; }
+      .grid-left   { order:  1; }
+
+      .ds-grid {
+        grid-template-columns: 1fr;
+      }
+      .ds-group:nth-child(odd) {
+        border-right: none;
+        padding-right: 0;
+      }
+      .ds-group:nth-child(even) {
+        padding-left: 0;
+      }
+      .ds-group:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--gray-200);
+      }
+      .ds-group:last-child {
+        border-bottom: none;
+      }
+
+      .lang-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .skill-name { font-size: 14px; }
+      .skill-desc { font-size: 12.5px; }
+
+      .summary-goal { font-size: 14px; }
+      .summary-text { font-size: 13px; }
+    }
+
+    @media (max-width: 400px) {
+      .lang-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media print {
@@ -320,7 +456,7 @@
   <!-- ═══════════════ HEADER ═══════════════ -->
   <header>
     <h1>John Smith</h1>
-    <p class="headline">Systems Software Engineer &nbsp;·&nbsp; Compilers &nbsp;·&nbsp; Graphics &nbsp;·&nbsp; Audio DSP</p>
+    <p class="headline">Software Engineer &nbsp;·&nbsp; Systems &nbsp;·&nbsp; Compilers &nbsp;·&nbsp; Graphics &nbsp;·&nbsp; Audio DSP</p>
     <div class="contact-row">
       <span class="contact-chip">
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -337,59 +473,132 @@
     </div>
   </header>
 
+  <!-- ═══════════════ OBJECTIVE / SUMMARY ═══════════════ -->
+  <div class="summary-block">
+    <div class="summary-label">Objective</div>
+    <p class="summary-goal">Seeking an internship or entry-level position in Software Engineering, Automation, or Systems Development.</p>
+    <p class="summary-text">Passionate software engineer who began programming at age 7 and spent years honing skills across systems, graphics, audio, and language tooling. Holds two Associate degrees in Computer Science and Information Technology. Thrives in high-performance, fast-moving environments alongside world-class teams. Comfortable on the command line or in an IDE, language-agnostic across the whole stack, and quick to adopt modern tools including AI-assisted development.</p>
+  </div>
+
   <!-- ═══════════════ BODY ═══════════════ -->
   <div class="grid-2">
 
     <!-- ─── LEFT ─── -->
-    <div>
+    <div class="grid-left">
 
-      <!-- Technical Skills -->
+      <!-- Programming Languages -->
       <div class="block">
-        <div class="section-label">Technical Skills</div>
+        <div class="section-label">Programming Languages</div>
+        <div class="lang-grid">
+          <div class="lang-card">
+            <div class="lang-name">C</div>
+            <div class="lang-note">Systems core</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">C++</div>
+            <div class="lang-note">OOP &amp; perf</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">Go</div>
+            <div class="lang-note">Concurrency</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">Rust</div>
+            <div class="lang-note">Memory safe</div>
+          </div>
+          <div class="lang-card">
+            <div class="lang-name">Java</div>
+            <div class="lang-note">OOP &amp; JVM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="block">
+        <div class="section-label">Major Projects</div>
 
         <div class="skill-item">
           <div class="skill-name">Audio DSP Programming</div>
-          <div class="skill-desc">Real-time digital signal processing using REAPER's JSFX scripting environment — filters, EQ, dynamics processing, and waveform analysis.</div>
+          <div class="skill-desc">Real-time digital signal processing built entirely in REAPER's JSFX scripting environment — from scratch, sample-accurate, with no external libraries.</div>
+          <div class="skill-detail">
+            <ul>
+              <li>Implemented parametric EQ with adjustable gain, frequency, and Q factor per band</li>
+              <li>Built dynamics processors: compressor, limiter, and gate with attack/release envelopes</li>
+              <li>Designed low-pass, high-pass, and band-pass filters using biquad IIR topology</li>
+              <li>Real-time waveform and spectrum visualization rendered directly in the JSFX canvas API</li>
+            </ul>
+          </div>
           <div class="pill-row">
             <span class="pill dark">REAPER</span>
             <span class="pill dark">JSFX</span>
-            <span class="pill">Filters &amp; EQ</span>
+            <span class="pill">IIR Filters</span>
             <span class="pill">Dynamics</span>
-            <span class="pill">Waveform Analysis</span>
+            <span class="pill">Spectral Analysis</span>
+            <span class="pill">Real-time</span>
           </div>
         </div>
 
         <div class="skill-item">
-          <div class="skill-name">Rendering Engine</div>
-          <div class="skill-desc">Custom OpenGL-based renderer with a hierarchical state/scene graph, draw call batching, and a resource manager handling textures, meshes, and shaders.</div>
+          <div class="skill-name">OpenGL Rendering Engine</div>
+          <div class="skill-desc">Custom 3D renderer built on OpenGL with a full-featured scene graph, resource pipeline, and shader system — designed for extensibility from the ground up.</div>
+          <div class="skill-detail">
+            <ul>
+              <li>Hierarchical scene graph with parent-child transforms, visibility culling, and dirty-flag propagation</li>
+              <li>Shader compilation and hot-reload pipeline with uniform block management</li>
+              <li>Resource manager with reference-counted lifetimes for textures, meshes, and materials</li>
+              <li>Draw call batching and state sorting to minimize GPU pipeline flushes</li>
+              <li>Camera system with perspective and orthographic projections; basic Phong lighting model</li>
+            </ul>
+          </div>
           <div class="pill-row">
             <span class="pill dark">OpenGL</span>
-            <span class="pill">State / Scene Graph</span>
+            <span class="pill dark">C++</span>
+            <span class="pill">Scene Graph</span>
+            <span class="pill">GLSL Shaders</span>
             <span class="pill">Resource Management</span>
-            <span class="pill">Shaders</span>
-            <span class="pill">Textures &amp; Meshes</span>
+            <span class="pill">Lighting</span>
           </div>
         </div>
 
         <div class="skill-item">
-          <div class="skill-name">Custom Compiler &amp; Parser Engine</div>
-          <div class="skill-desc">Full pipeline from source text to executable output — lexer, recursive-descent parser, AST construction, semantic analysis, and code generation for a custom programming language.</div>
+          <div class="skill-name">Custom Compiler &amp; Language</div>
+          <div class="skill-desc">End-to-end compiler toolchain for a purpose-built programming language — from raw source text through to executable output, written without third-party parser frameworks.</div>
+          <div class="skill-detail">
+            <ul>
+              <li>Hand-written lexer with token classification, line tracking, and error recovery</li>
+              <li>Recursive-descent parser producing a typed abstract syntax tree (AST)</li>
+              <li>Symbol table and scope resolver for variable binding and type checking</li>
+              <li>Code generation targeting a bytecode VM or native output; supports functions, loops, and conditionals</li>
+              <li>Designed language syntax with static typing, first-class functions, and clean expression grammar</li>
+            </ul>
+          </div>
           <div class="pill-row">
             <span class="pill dark">Lexer</span>
             <span class="pill dark">Parser</span>
             <span class="pill">AST</span>
-            <span class="pill">Semantic Analysis</span>
+            <span class="pill">Type Checking</span>
             <span class="pill">Code Generation</span>
+            <span class="pill">Bytecode VM</span>
           </div>
         </div>
 
         <div class="skill-item">
           <div class="skill-name">Binary &amp; Text File Format Parsers</div>
-          <div class="skill-desc">Low-level readers and writers for custom binary formats — byte-order handling, struct packing/unpacking — and text parsers for structured markup and config formats.</div>
+          <div class="skill-desc">Low-level readers and writers for structured binary formats and text-based config/markup languages — built to handle real-world edge cases and malformed input gracefully.</div>
+          <div class="skill-detail">
+            <ul>
+              <li>Byte-order (endianness) handling for both little-endian and big-endian formats</li>
+              <li>Struct packing and unpacking with alignment and padding control</li>
+              <li>Streaming parsers for large files to avoid loading entire content into memory</li>
+              <li>Text parsers for config formats (key-value, INI-style) and structured markup</li>
+              <li>Error reporting with byte offset and line/column context for debugging</li>
+            </ul>
+          </div>
           <div class="pill-row">
             <span class="pill">Binary Formats</span>
-            <span class="pill">Byte-order / Endianness</span>
+            <span class="pill">Endianness</span>
             <span class="pill">Struct Packing</span>
+            <span class="pill">Streaming I/O</span>
             <span class="pill">Text Parsing</span>
           </div>
         </div>
@@ -397,6 +606,13 @@
         <div class="skill-item">
           <div class="skill-name">Wrappers, Interface Layers &amp; APIs</div>
           <div class="skill-desc">Designing clean abstraction layers over system APIs and third-party libraries — decoupling implementation details, managing lifetimes, and exposing ergonomic interfaces.</div>
+          <div class="skill-detail">
+            <ul>
+              <li>Thin wrapper design to isolate OS and vendor API specifics from application code</li>
+              <li>Handle-based resource APIs to enforce ownership and prevent use-after-free</li>
+              <li>Versioned interface definitions enabling backend swaps without caller changes</li>
+            </ul>
+          </div>
           <div class="pill-row">
             <span class="pill">API Design</span>
             <span class="pill">Abstraction Layers</span>
@@ -405,7 +621,7 @@
           </div>
         </div>
 
-      </div><!-- /block -->
+      </div><!-- /block projects -->
 
       <!-- Data Structures -->
       <div class="block">
@@ -482,7 +698,7 @@
     </div><!-- /left -->
 
     <!-- ─── RIGHT ─── -->
-    <div>
+    <div class="grid-right">
 
       <!-- Education -->
       <div class="block">
@@ -522,8 +738,24 @@
           <span class="pill">Audio</span>
           <span class="pill">Text Rendering</span>
           <span class="pill">Input Devices</span>
-          <span class="pill">System Configuration</span>
+          <span class="pill">System Config</span>
           <span class="pill">Driver Interfaces</span>
+          <span class="pill">File Systems</span>
+          <span class="pill">Process Management</span>
+        </div>
+      </div>
+
+      <!-- Tools & Environment -->
+      <div class="block">
+        <div class="section-label">Tools &amp; Environment</div>
+        <div class="pill-row">
+          <span class="pill dark">CLI</span>
+          <span class="pill dark">Git</span>
+          <span class="pill">Make / CMake</span>
+          <span class="pill">GDB / LLDB</span>
+          <span class="pill">VS Code</span>
+          <span class="pill">AI Code Assist</span>
+          <span class="pill">SSH</span>
         </div>
       </div>
 
