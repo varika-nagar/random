@@ -123,7 +123,8 @@
     .edu-strip {
       display: flex;
       gap: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
+      grid-column: 1 / -1;
     }
 
     .edu-card {
@@ -488,13 +489,23 @@
       .grid-left,
       .grid-right { display: contents; }
 
-      /* desired mobile order: languages → OS → projects → tools → OS sub → CS */
+      /* desired mobile order */
       #block-languages { order: 1; }
-      #block-os        { order: 2; }
-      #block-projects  { order: 3; }
-      #block-tools     { order: 4; }
-      #block-os-sub    { order: 5; }
+      #block-projects  { order: 2; }
+      #block-tools     { order: 3; }
+      #block-os-sub    { order: 4; }
+      #edu-strip       { order: 5; }
       #block-cs        { order: 6; }
+
+      /* hide OS bars on mobile */
+      #block-os        { display: none; }
+
+      /* language cards: smaller and tighter */
+      .lang-card {
+        padding: 8px 6px;
+      }
+      .lang-name { font-size: 12px; }
+      .lang-note { font-size: 10px; }
 
       .ds-grid {
         grid-template-columns: 1fr;
@@ -566,8 +577,11 @@
     <p class="summary-text">Passionate software engineer who began programming at age 7 and spent years honing skills across systems, graphics, audio, and language tooling. Holds two Associate degrees in Computer Science and Information Technology. Thrives in high-performance, fast-moving environments alongside world-class teams. Comfortable on the command line or in an IDE, language-agnostic across the whole stack, and quick to adopt modern tools including AI-assisted development.</p>
   </div>
 
-  <!-- ═══════════════ EDUCATION ═══════════════ -->
-  <div class="edu-strip">
+  <!-- ═══════════════ BODY ═══════════════ -->
+  <div class="grid-2">
+
+    <!-- Education (full-width on desktop, reorderable on mobile) -->
+    <div id="edu-strip" class="edu-strip">
     <div class="edu-card">
       <div class="section-label">Education</div>
       <div class="edu-card-inner">
@@ -584,9 +598,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ═══════════════ BODY ═══════════════ -->
-  <div class="grid-2">
 
     <!-- ─── LEFT ─── -->
     <div class="grid-left">
