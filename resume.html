@@ -480,12 +480,21 @@
       }
 
       .grid-2 {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
       }
 
-      /* On mobile, put right column first (education/OS) before the long project list */
-      .grid-right  { order: -1; }
-      .grid-left   { order:  1; }
+      /* dissolve column wrappers so blocks become direct flex children */
+      .grid-left,
+      .grid-right { display: contents; }
+
+      /* desired mobile order: languages → OS → projects → tools → OS sub → CS */
+      #block-languages { order: 1; }
+      #block-os        { order: 2; }
+      #block-projects  { order: 3; }
+      #block-tools     { order: 4; }
+      #block-os-sub    { order: 5; }
+      #block-cs        { order: 6; }
 
       .ds-grid {
         grid-template-columns: 1fr;
@@ -583,7 +592,7 @@
     <div class="grid-left">
 
       <!-- Programming Languages -->
-      <div class="block">
+      <div class="block" id="block-languages">
         <div class="section-label">Programming Languages</div>
         <div class="lang-grid">
           <div class="lang-card">
@@ -614,7 +623,7 @@
       </div>
 
       <!-- Projects -->
-      <div class="block">
+      <div class="block" id="block-projects">
         <div class="section-label">Major Projects</div>
 
         <div class="skill-item">
@@ -710,7 +719,7 @@
       </div><!-- /block projects -->
 
       <!-- Computer Science Education & Skills -->
-      <div class="block">
+      <div class="block" id="block-cs">
         <div class="section-label">Computer Science Education &amp; Skills</div>
 
         <div class="concept-row">
@@ -750,7 +759,7 @@
     <div class="grid-right">
 
       <!-- Tools & Environment -->
-      <div class="block">
+      <div class="block" id="block-tools">
         <div class="section-label">Tools &amp; Environment</div>
         <div class="pill-row">
           <span class="pill dark">CLI</span>
@@ -764,7 +773,7 @@
       </div>
 
       <!-- OS Subsystems -->
-      <div class="block">
+      <div class="block" id="block-os-sub">
         <div class="section-label">OS Subsystems &amp; Config</div>
         <div class="pill-row">
           <span class="pill">Display</span>
@@ -779,7 +788,7 @@
       </div>
 
       <!-- Operating Systems -->
-      <div class="block">
+      <div class="block" id="block-os">
         <div class="section-label">Operating Systems</div>
         <div class="os-row">
           <div class="os-top"><span class="os-name">Linux</span><span class="os-label">Excellent</span></div>
